@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
-	//"runtime"
+	"runtime"
 	"time"
 
 	"github.com/XIU2/CloudflareSpeedTest/task"
@@ -150,7 +150,10 @@ func endPrint() {
 	//if runtime.GOOS == "windows" { // 如果是 Windows 系统，则需要按下 回车键 或 Ctrl+C 退出（避免通过双击运行时，测速完毕后直接关闭）
 	//	fmt.Printf("按下 回车键 或 Ctrl+C 退出。")
 	//	fmt.Scanln()
-	//}
+	if runtime.GOOS == "windows" { // 如果是 Windows 系统，则显示文本并等待5秒后退出
+		fmt.Println("Running on Windows. Exit in 5 seconds...")
+		time.Sleep(5 * time.Second)
+	}
 }
 
 // 检查更新
