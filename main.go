@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
-	"runtime"
+	//"runtime"
 	"time"
 
 	"github.com/XIU2/CloudflareSpeedTest/task"
